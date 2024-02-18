@@ -3,8 +3,10 @@ package com.atif.ecommerce.ecommerce.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
@@ -13,6 +15,8 @@ import java.io.Serializable;
 @Entity
 @Builder
 @Document(collection = "user")
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
 
     @Id
