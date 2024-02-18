@@ -1,5 +1,4 @@
 spring:
   data:
     mongodb:
-      uri : mongodb+srv://atif:V9VqwnN1hn7hOx5H@atifdb.iuuldkt.mongodb.net/?retryWrites=true&w=majority
       database : ecommerceDB
