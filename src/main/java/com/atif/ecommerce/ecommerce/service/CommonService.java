@@ -1,15 +1,32 @@
 package com.atif.ecommerce.ecommerce.service;
 
+import com.atif.ecommerce.ecommerce.repository.CommonRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
-public interface CommonService<T, ID> {
-    List<T> getAll();
+@Service
+@AllArgsConstructor
+public class CommonService<T, ID> {
 
-    Optional<T> getById(ID id);
+    private CommonRepository<T, ID> repository;
 
-    T save(T entity);
+    List<T> getAll() {
+        return repository.findAll();
+    }
 
-    void deleteById(ID id);
+    Optional<T> getById(ID id) {
+        return repository.findById(id);
+    }
+
+    T save(T entity) {
+        return repository.save(entity);
+    }
+
+    void deleteById(ID id) {
+        repository.deleteById(id);
+    }
 
 }
