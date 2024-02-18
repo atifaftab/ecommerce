@@ -13,20 +13,19 @@ public class CommonService<T, ID> {
 
     private CommonRepository<T, ID> repository;
 
-    List<T> getAll() {
+    public List<T> getAll() {
         return repository.findAll();
     }
 
-    Optional<T> getById(ID id) {
+    public Optional<T> getById(ID id) {
         return repository.findById(id);
     }
 
-    T save(T entity) {
+    public T save(T entity) {
         return repository.save(entity);
     }
 
-    void deleteById(ID id) {
+    public void deleteById(ID id) {
         repository.deleteById(id);
     }
-
 }
